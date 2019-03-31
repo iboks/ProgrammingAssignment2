@@ -22,11 +22,11 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
     	inv <- x$getInverse()
         if (!is.null(inv)) {
-                message("Cached data loading")
+                message("getting cached data")
                 return(inv)
         }
-        datamat <- x$get()
-        inv <- solve(datamat, ...)
+        data <- x$get()
+        inv <- solve(data, ...)
         x$setInverse(inv)
         inv
 }
